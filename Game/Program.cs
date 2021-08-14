@@ -29,10 +29,11 @@ namespace Game
                 {
                     case 1:
                         Dictionary<string,string> selectedTheme =  ThemeSelector.SelectedTheme();
-                        foreach(var k in selectedTheme)
-                        {
-                            Console.WriteLine(k.Key);
-                        }
+                        Questions.Start(selectedTheme);
+                        //foreach(var k in selectedTheme)
+                        //{
+                        //    Console.WriteLine(k.Key);
+                        //}
                         break;
                     case 2:
                         Console.WriteLine("Rules");
