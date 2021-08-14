@@ -1,43 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Game
 {
     class Program
     {
-        static bool inputCheck(string input, string inputType)
-        {
-            switch (inputType)
-            {
-                case ("str"):
-                    if (input.All(Char.IsLetter) && input.Length>0)
-                    {
-                        return true;
-                    }
-                    Console.WriteLine("Error!! you must input string");
-                    break;
+        
 
-                case ("chr"):
-                    if (input.All(Char.IsLetter) && input.Length == 1)
-                    {
-                        return true;
-                    }
-                    Console.WriteLine("Error!! you must input character");
-                    break;
-
-                case ("int"):
-                    if (input.All(Char.IsDigit) && input.Length > 0 )
-                    {
-                        return true;
-                    }
-                    Console.WriteLine("Error!! You must input number");
-                    break;
-
-                default:
-                    break;
-            }
-            return false;
-        }
 
         static void Main(string[] args)
         {
@@ -48,7 +18,7 @@ namespace Game
                 Console.WriteLine("Weclome, choose an options (enter value). \n 1. Choose theme \n 2.Rules \n 0.Exit");
 
                 input = Console.ReadLine().Trim();
-                while (!inputCheck(input, "int"))
+                while (!InputCheck.inputCheck(input, "int"))
                 {
                     Console.WriteLine("Please enter proper type.");
                     input = Console.ReadLine();
@@ -58,7 +28,11 @@ namespace Game
                 switch (int.Parse(input))
                 {
                     case 1:
-                        //ThemeSelector();
+                        Dictionary<string,string> selectedTheme =  ThemeSelector.SelectedTheme();
+                        foreach(var k in selectedTheme)
+                        {
+                            Console.WriteLine(k.Key);
+                        }
                         break;
                     case 2:
                         Console.WriteLine("Rules");
