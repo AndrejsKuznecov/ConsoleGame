@@ -21,7 +21,7 @@ namespace Game
                 while (!InputCheck.inputCheck(input, "int"))
                 {
                     Console.WriteLine("Please enter proper type.");
-                    input = Console.ReadLine();
+                    input = Console.ReadLine().Trim();
                 }
 
                 

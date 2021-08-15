@@ -18,7 +18,7 @@ namespace Game
             park.Add("squirrel", "Its alive");
 
 
-            Console.WriteLine("Weclome, choose a theme (enter value). \n 1. Office \n 2.Park");
+            Console.WriteLine("Weclome, choose a theme (enter value). \n 1. Office \n 2. Park");
             string input = Console.ReadLine().Trim();
             while (!InputCheck.inputCheck(input, "int"))
             {
@@ -30,11 +30,11 @@ namespace Game
             switch (int.Parse(input))
             {
                 case 1:
-                    return office;
                     Console.WriteLine("Selected theme: office");
+                    return office;
                 case 2:
-                    return park;
                     Console.WriteLine("Selected theme: park");
+                    return park;
                 default:
                     Console.WriteLine("Chose an option");
                     break;
