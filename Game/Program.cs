@@ -14,6 +14,7 @@ namespace Game
             bool gameRunning = true;
           while (gameRunning)
             {
+                Console.Clear();
                 string input;
                 Console.WriteLine("Weclome, choose an options (enter value). \n 1. Choose theme \n 2.Rules \n 0.Exit");
 
@@ -30,13 +31,10 @@ namespace Game
                     case 1:
                         Dictionary<string,string> selectedTheme =  ThemeSelector.SelectedTheme();
                         Questions.Start(selectedTheme);
-                        //foreach(var k in selectedTheme)
-                        //{
-                        //    Console.WriteLine(k.Key);
-                        //}
                         break;
                     case 2:
-                        Console.WriteLine("Rules");
+                        Console.WriteLine("That is a word guessing game, where you can chose words theme. After that you'll have opportunity to guess word(if guessed wrong you lost) or chose one of the hints. Good Luck!! \n Press any key to continue");
+                        Console.ReadKey();
                         break;
 
                     case 0:

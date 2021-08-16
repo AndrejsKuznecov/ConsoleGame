@@ -46,6 +46,8 @@ namespace Game
                             }
                             else
                                 Console.WriteLine("You Lost!!");
+                            Console.WriteLine("\nPress any key to continue");
+                            Console.ReadKey();
                             break;
                         case 2:
                             Console.WriteLine("First letter of the word: " + charList.First());
@@ -94,7 +96,8 @@ namespace Game
                     }
                     else
                         Console.WriteLine("You Lost!!");
-
+                    Console.WriteLine("\nPress any key to continue");
+                    Console.ReadKey();
 
 
                 }
