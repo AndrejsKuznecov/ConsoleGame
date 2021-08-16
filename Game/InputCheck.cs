@@ -27,15 +27,6 @@ namespace Game
                     }
                     Console.WriteLine("Error!! you must input character");
                     break;
-
-                case ("int"):
-                    if (input.All(Char.IsDigit) && input.Length > 0)
-                    {
-                        return true;
-                    }
-                    Console.WriteLine("Error!! You must input number");
-                    break;
-
                 default:
                     break;
             }

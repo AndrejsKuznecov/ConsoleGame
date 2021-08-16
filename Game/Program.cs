@@ -15,18 +15,9 @@ namespace Game
           while (gameRunning)
             {
                 Console.Clear();
-                string input;
-                Console.WriteLine("Weclome, choose an options (enter value). \n 1. Choose theme \n 2.Rules \n 0.Exit");
-
-                input = Console.ReadLine().Trim();
-                while (!InputCheck.inputCheck(input, "int"))
-                {
-                    Console.WriteLine("Please enter proper type.");
-                    input = Console.ReadLine().Trim();
-                }
-
-                
-                switch (int.Parse(input))
+                Console.WriteLine("Weclome, choose an options (enter value). \n 1. Choose theme \n 2.Rules \n 9.Exit");
+                Int32.TryParse(Console.ReadLine().Trim(), out int input);
+                switch (input)
                 {
                     case 1:
                         Dictionary<string,string> selectedTheme =  ThemeSelector.SelectedTheme();
@@ -36,8 +27,7 @@ namespace Game
                         Console.WriteLine("That is a word guessing game, where you can chose words theme. After that you'll have opportunity to guess word(if guessed wrong you lost) or chose one of the hints. Good Luck!! \n Press any key to continue");
                         Console.ReadKey();
                         break;
-
-                    case 0:
+                    case 9:
                         Console.WriteLine("Closing program");
                         gameRunning = false;
                         break;

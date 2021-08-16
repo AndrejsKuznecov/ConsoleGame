@@ -22,14 +22,10 @@ namespace Game
                 if (hintCount > 0)
                 {
                     Console.WriteLine("Hints left:" + hintCount + "\n");
-                    Console.WriteLine("Choose an option(to guess the word or a hint): \n 1. Guess the word \n 2.Hint: To get first letter of the word \n 3.Hint: To get word length \n 4.Hint: To get if a certain letter contains in the word. \n 5.Hint: Get small description about the word.  \n 6.Hint: ");
-                    string input = Console.ReadLine().Trim();
-                    while (!InputCheck.inputCheck(input, "int"))
-                    {
-                        Console.WriteLine("Please enter proper type.");
-                        input = Console.ReadLine().Trim();
-                    }
-                    switch (int.Parse(input))
+                    string input;
+                    Console.WriteLine("Choose an option(to guess the word or a hint): \n 1. Guess the word \n 2. Hint: To get first letter of the word \n 3. Hint: To get word length \n 4. Hint: To get if a certain letter contains in the word. \n 5. Hint: Get small description about the word.");
+                    Int32.TryParse(Console.ReadLine().Trim(), out int inputInt);
+                    switch (inputInt)
                     {
                         case 1:
                             guessing = false;

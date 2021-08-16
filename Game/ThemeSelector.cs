@@ -17,17 +17,9 @@ namespace Game
             park.Add("tree", "It haves leaves");
             park.Add("squirrel", "Its alive");
 
-
-            Console.WriteLine("Weclome, choose a theme (enter value). \n 1. Office \n 2. Park");
-            string input = Console.ReadLine().Trim();
-            while (!InputCheck.inputCheck(input, "int"))
-            {
-                Console.WriteLine("Please enter proper type.");
-                input = Console.ReadLine();
-            }
-
-
-            switch (int.Parse(input))
+            Console.WriteLine("Choose a theme (enter value). \n 1. Office \n 2. Park");
+            Int32.TryParse(Console.ReadLine().Trim(), out int input);
+            switch (input)
             {
                 case 1:
                     Console.WriteLine("Selected theme: office");
@@ -41,8 +33,5 @@ namespace Game
             }
             return null;
         }
-        
-
-
     }
 }
