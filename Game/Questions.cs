@@ -72,8 +72,6 @@ namespace Game
                         case 5:
                             Console.WriteLine(wordDescription);
                             break;
-                        case 6:
-                            break;
 
                         default:
                             Console.WriteLine("Chose an option");
